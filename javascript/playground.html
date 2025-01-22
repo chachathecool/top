@@ -1,0 +1,16 @@
+<button type="button">Player 1: Chris</button>
+
+<script>
+const button = document.querySelector("button");
+
+button.addEventListener("click", updateName);
+
+function updateName() {
+  let name = prompt("Enter a new name");
+  if (name == null) {
+    alert("No name");
+  }
+  button.textContent = `Player 1: ${name}`;
+}
+
+</script>
