@@ -1,0 +1,115 @@
+<!-- Apprentissage actif : un calendrier simple -->
+
+<script>
+  var select = document.querySelector('select');
+  var list = document.querySelector('ul');
+  var h1 = document.querySelector('h1');
+  
+  select.onchange = function() {
+    var choice = select.value;
+  
+    // if (choice) {
+    //   h1 = choice;
+    // }
+    
+    if (choice === "Avril" || choice == "Juin" || choice == "Septembre" || choice == "Novembre") {
+      var days = 30;
+    }else if (choice === "Février") {
+      var days = 28;
+    }else {
+      var days = 31;
+    }
+  
+    createCalendar(days, choice);
+  }
+  
+  function createCalendar(days, choice) {
+    list.innerHTML = '';
+    h1.textContent = choice;
+    for (var i = 1; i <= days; i++) {
+      const listItem = document.createElement('li');
+      listItem.textContent = i;
+      list.appendChild(listItem);
+    }
+  }
+  
+  createCalendar(31,'Janvier');
+
+</script>
+
+<!-- Activité : plus de choix de couleurs -->
+
+<script>
+
+  const select = document.querySelector('select');
+  const html = document.querySelector('.output');
+  
+  select.onchange = function() {
+    let choice = select.value;
+  
+    switch(choice) {
+      case "white":
+      update("white", "black");
+      break;
+      
+      case "black":
+      update("black", "white");
+      break;
+      
+      case "purple":
+      update("purple", "black");
+      break;
+      
+      case "yellow":
+      update("yellow", "black");
+      break;
+      
+      case "psychedelic":
+      update("purple", "blue");
+      break;
+      
+      default:
+      update("white", "black");
+    }
+  }
+  
+  function update(bgColor, textColor) {
+    html.style.backgroundColor = bgColor;
+    html.style.color = textColor;
+  }
+
+</script>
+
+<script>
+
+  if (browser === "Edge") {
+  alert( "You've got the Edge!" );
+  }else if (browser === "Chrome" || browser === "Firefox" || browser === "Safari" || browser === "Opera") {
+    alert( 'Okay we support these browsers too' );
+  }else {
+    alert( 'We hope that this page looks ok!' );
+  }
+
+</script>
+
+<script>
+
+let a = +prompt('a?', '');
+
+switch(a) {
+  case 0:
+    alert( 0 );
+    break;
+  
+  case 1:
+    alert( 1 );
+    break;
+  
+  case 2:
+  case 3:
+    alert( '2,3' );
+    break;
+
+}
+
+</script>
